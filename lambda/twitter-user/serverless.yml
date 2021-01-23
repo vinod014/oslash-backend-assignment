@@ -1,0 +1,46 @@
+service: twitter-user
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+
+  region: ap-south-1
+  iamRoleStatements: 
+    - Effect: Allow
+      Action: 
+        - dynamodb:DescribeTable
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+      Resource: 'arn:aws:dynamodb:ap-south-1:*:*'
+
+  environment:
+    USERS_TABLE: users
+    TWEETS_TABLE: tweets
+    LOGS_TABLE: logs
+
+functions:
+  create:
+    handler: services/createTweet.create
+    events:
+     - http:
+         path: /create
+         method: post
+         cors: true
+  delete:
+    handler: services/deleteTweet.delete
+    events:
+     - http:
+         path: /delete/{id}/{uid}
+         method: delete
+         cors: true
+  list:
+    handler: services/listTweet.list
+    events:
+     - http:
+         path: /list/{id}
+         method: get
+         cors: true

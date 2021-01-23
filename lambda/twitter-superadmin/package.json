@@ -1,0 +1,11 @@
+{
+  "name": "twitter-superadmin",
+  "version": "1.0.0",
+  "description": "twitter superadmin",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "uuid": "^2.0.3",
+    "bluebird": "3.7.2"
+  }
+}

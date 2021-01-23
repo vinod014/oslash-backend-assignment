@@ -1,0 +1,7 @@
+{
+  "action": "changeUserDetails",
+  "content": {
+    "name": "Abc"
+  },
+  "userId": 123
+}

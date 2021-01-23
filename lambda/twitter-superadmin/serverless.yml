@@ -1,0 +1,31 @@
+service: twitter-superadmin
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+
+  region: ap-south-1
+  iamRoleStatements: 
+    - Effect: Allow
+      Action: 
+        - dynamodb:DescribeTable
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+      Resource: 'arn:aws:dynamodb:ap-south-1:*:*'
+
+  environment:
+    ACTIONS_TABLE: admin_actions
+    LOGS_TABLE: logs
+
+functions:
+  logs:
+    handler: services/logs.list
+    events:
+      - http:
+         path: /listLogs/{type}
+         method: get
+         cors: true
