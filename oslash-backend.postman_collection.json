@@ -1,0 +1,659 @@
+{
+	"info": {
+		"_postman_id": "f8a1f242-dd87-4c4d-9c71-ab2dd00dd904",
+		"name": "oslash-backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Creating new tweet",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"tweet\": \"On server 014\",\n    \"userId\": 14\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gcu2v7nte5.execute-api.ap-south-1.amazonaws.com/dev/create",
+					"protocol": "https",
+					"host": [
+						"gcu2v7nte5",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"create"
+					]
+				},
+				"description": "For user creating tweet"
+			},
+			"response": [
+				{
+					"name": "Creating new tweet",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tweet\": \"On server 014\",\n    \"userId\": 14\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://gcu2v7nte5.execute-api.ap-south-1.amazonaws.com/dev/create",
+							"protocol": "https",
+							"host": [
+								"gcu2v7nte5",
+								"execute-api",
+								"ap-south-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"create"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "38"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 23 Jan 2021 12:23:19 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "5b340e5e-4681-4a39-92dd-2e289e9f1bae"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "ZmhAgGFxhcwFcMg="
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-600c1536-7a24d38c1257cee63dfd7b7e;Sampled=0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 d3580968a9fa37fa745d1e9d5543cbb4.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "BLR50-C3"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "s3iKk0cD604uCEs2c6BWR6N_EHERe539rzbCeUVNj-u75r63CcqUIw=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Tweet saved successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "List tweets",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://gcu2v7nte5.execute-api.ap-south-1.amazonaws.com/dev/list/16",
+					"protocol": "https",
+					"host": [
+						"gcu2v7nte5",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"list",
+						"16"
+					]
+				},
+				"description": "User can list his/her tweets"
+			},
+			"response": [
+				{
+					"name": "List tweets",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://gcu2v7nte5.execute-api.ap-south-1.amazonaws.com/dev/list/16",
+							"protocol": "https",
+							"host": [
+								"gcu2v7nte5",
+								"execute-api",
+								"ap-south-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"list",
+								"16"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "420"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 23 Jan 2021 12:24:37 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "e4fb8fa5-1eb7-418c-8de1-c8ca06b464af"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "ZmhMvHhCBcwFplw="
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-600c1584-6e1750803ef0477661fe2c9d;Sampled=0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 d3580968a9fa37fa745d1e9d5543cbb4.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "BLR50-C3"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "EJlzBGk15qrHKux6QLfhD48xkHFsicnLayxqqmtDGepDQ-WrMeJ5Gw=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"createdAt\": 1611402664972,\n            \"id\": \"45dcd4c0-5d71-11eb-a616-6304d1ae0d94\",\n            \"tweetedBy\": 16,\n            \"updatedAt\": 1611402664972,\n            \"tweet\": \"On aaaar 123\"\n        },\n        {\n            \"createdAt\": 1611402154628,\n            \"id\": \"15acab50-5d70-11eb-a308-b11218ad9dfa\",\n            \"tweetedBy\": 16,\n            \"updatedAt\": 1611402154628,\n            \"tweet\": \"On server 123\"\n        },\n        {\n            \"createdAt\": 1611402049169,\n            \"id\": \"d6d0c010-5d6f-11eb-bf0d-5f3519d4e479\",\n            \"tweetedBy\": 16,\n            \"updatedAt\": 1611402049169,\n            \"tweet\": \"On server 123\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete tweet",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://gcu2v7nte5.execute-api.ap-south-1.amazonaws.com/dev/delete/4c332540-5d71-11eb-a616-6304d1ae0d94/16",
+					"protocol": "https",
+					"host": [
+						"gcu2v7nte5",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"delete",
+						"4c332540-5d71-11eb-a616-6304d1ae0d94",
+						"16"
+					]
+				},
+				"description": "User can delete his tweet"
+			},
+			"response": [
+				{
+					"name": "Delete tweet",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://gcu2v7nte5.execute-api.ap-south-1.amazonaws.com/dev/delete/4c332540-5d71-11eb-a616-6304d1ae0d94/16",
+							"protocol": "https",
+							"host": [
+								"gcu2v7nte5",
+								"execute-api",
+								"ap-south-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"delete",
+								"4c332540-5d71-11eb-a616-6304d1ae0d94",
+								"16"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "40"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 23 Jan 2021 11:51:47 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "40b64a1b-25f3-4aa3-8ee4-b76aa5dd9c01"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "ZmcZAGFThcwFlbQ="
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-600c0dd3-088ed3210fd405e86178a953;Sampled=0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 e55e333398814dda2a1f4317545c4771.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "BLR50-C3"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "I3gfpJvfXGjHlSzruHukjD9zCUIQIxJRoAs83BYFs6enzUxYfDqceg=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Tweet deleted successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Change user details",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"changeUserDetails\",\n    \"content\": {\"name\":\"Vinod\"},\n    \"userId\": 123\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://36hx55bymc.execute-api.ap-south-1.amazonaws.com/dev/editUser",
+					"protocol": "https",
+					"host": [
+						"36hx55bymc",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"editUser"
+					]
+				},
+				"description": "Admin can enqueue request to change user details"
+			},
+			"response": [
+				{
+					"name": "Change user details",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"action\": \"changeUserDetails\",\n    \"content\": {\"name\":\"Vinod\"},\n    \"userId\": 123\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://36hx55bymc.execute-api.ap-south-1.amazonaws.com/dev/editUser",
+							"protocol": "https",
+							"host": [
+								"36hx55bymc",
+								"execute-api",
+								"ap-south-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"editUser"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "39"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 23 Jan 2021 12:00:16 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "9f444f71-69de-4710-9d10-50d3f02eb8d8"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "ZmdojG_SBcwFldw="
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-600c0fd0-11b5c3b56f89a6f511d6b091;Sampled=0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 1f284758ce2b509a8527b0bd6e318f9b.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "BLR50-C2"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "eXvJmbKxuig8bogp1szxbfeC5pt5TtQWaoKVMYYmuCYKY4QPRSTEYA=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Action saved successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Tweets CRUD",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"createTweet\",\n    \"content\": \"Hey there!!\",\n    \"userId\": 123\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://36hx55bymc.execute-api.ap-south-1.amazonaws.com/dev/tweets",
+					"protocol": "https",
+					"host": [
+						"36hx55bymc",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"tweets"
+					]
+				},
+				"description": "Admin can enqueue tweet CRUD operations\naction:createTweet,updateTweet,deleteTweet"
+			},
+			"response": [
+				{
+					"name": "Tweets CRUD",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"action\": \"createTweet\",\n    \"content\": \"Hey there!!\",\n    \"userId\": 123\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://36hx55bymc.execute-api.ap-south-1.amazonaws.com/dev/tweets",
+							"protocol": "https",
+							"host": [
+								"36hx55bymc",
+								"execute-api",
+								"ap-south-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"tweets"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "39"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 23 Jan 2021 12:27:15 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "899d5779-8b8d-42de-bac1-942259b297ef"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "ZmhlcEZ2hcwFfAw="
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-600c1622-5626a73d407f5eb05243778c;Sampled=0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 00c1b732b01b69b99194aad86c742b4f.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "BLR50-C2"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "3vwq7pGxHLdVS0mjI7OJp-UhePDohGDhtsiLGidsy77YrTE5W3Jaxw=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Action saved successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "List logs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://h8m9wlqita.execute-api.ap-south-1.amazonaws.com/dev/listLogs/action",
+					"protocol": "https",
+					"host": [
+						"h8m9wlqita",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"listLogs",
+						"action"
+					]
+				},
+				"description": "Super admin can list logs based on log type\ntype: action,audit"
+			},
+			"response": [
+				{
+					"name": "List logs",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://h8m9wlqita.execute-api.ap-south-1.amazonaws.com/dev/listLogs/action",
+							"protocol": "https",
+							"host": [
+								"h8m9wlqita",
+								"execute-api",
+								"ap-south-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"listLogs",
+								"action"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "242"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 23 Jan 2021 12:28:17 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "a1e4869f-15f0-41fb-86e7-c0d4cbb0395b"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "ZmhvHGmshcwFX0A="
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-600c1660-39f7d04728fa4d6c313402d6;Sampled=0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 d55b72d5ad2a15b8e8a85191b887f9e1.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "BLR50-C1"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "GDHwUJHQj-tcWisz5XWdZydR8dYgzFyx_hVYHkbNb39ekyZloWFLbA=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        \"Admin requested to createTweet tweet 123\",\n        \"Admin requested to createTweet tweet new tweet\",\n        \"User id:14 tweeted: On server 014\",\n        \"Admin requested to changeUserDetails of userId 123\",\n        \"Admin requested to createTweet tweet Hey there!!\"\n    ]\n}"
+				}
+			]
+		}
+	]
+}
