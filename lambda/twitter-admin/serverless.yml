@@ -21,20 +21,13 @@ provider:
   environment:
     ACTIONS_TABLE: admin_actions
     LOGS_TABLE: logs
-    TWEET_ACTIONS: createTweet,updateTweet,deleteTweet
+    TWEET_ACTIONS: createTweet,updateTweet,deleteTweet,changeUserDetails
 
 functions:
-  users:
-    handler: services/user.editUser
+  addActions:
+    handler: services/admin.addActions
     events:
       - http:
-         path: /editUser
-         method: post
-         cors: true
-  tweets:
-    handler: services/tweet.manageTweets
-    events:
-      - http:
-         path: /tweets
+         path: /addActions
          method: post
          cors: true

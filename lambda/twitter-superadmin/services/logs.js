@@ -5,7 +5,7 @@ const uuid = require('uuid');
 AWS.config.setPromisesDependency(require('bluebird'));
 
 const dynamoDb = new AWS.DynamoDB.DocumentClient();
-module.exports.list = async (event) => {
+async function list(event) {
   let response = {}
   response.statusCode = 500;
   response.body = JSON.stringify({
@@ -53,13 +53,13 @@ module.exports.list = async (event) => {
   return response;
 };
 
-const generateLog = async (type, message) => {
+async function generateLog(type, message) {
   const timestamp = new Date().getTime();
   const log = {
     id: uuid.v1(),
     type,
     message,
-    application: 'twitter-user',
+    application: 'twitter-superAdmin',
     createdAt: timestamp,
     updatedAt: timestamp,
   }
@@ -70,3 +70,5 @@ const generateLog = async (type, message) => {
   return dynamoDb.put(logDbData).promise()
     .then(res => logDbData);
 }
+
+module.exports = { list, generateLog }

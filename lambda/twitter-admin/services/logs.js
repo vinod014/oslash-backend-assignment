@@ -12,7 +12,7 @@ module.exports = async function (type, message) {
     id: uuid.v1(),
     type,
     message,
-    application: 'twitter-user',
+    application: 'twitter-admin',
     createdAt: timestamp,
     updatedAt: timestamp,
   }

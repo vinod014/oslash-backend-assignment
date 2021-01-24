@@ -7,26 +7,24 @@ AWS.config.setPromisesDependency(require('bluebird'));
 
 const dynamoDb = new AWS.DynamoDB.DocumentClient();
 
-module.exports.manageTweets = async event => {
+module.exports.addActions = async event => {
   let response = {}
   response.statusCode = 500;
   response.body = JSON.stringify({
-    message: 'Failed to save tweet action due to some error'
+    message: 'Failed to save admin action due to some error'
   });
   try {
     const requestBody = JSON.parse(event.body);
     const action = requestBody.action;
-    const contentData = requestBody.content;
+    const content = requestBody.content;
     const userId = requestBody.userId;
-    const validActions = process.env.TWEET_ACTIONS.split(',')
-    console.log(validActions.includes(action))
+    const validActions = process.env.TWEET_ACTIONS.split(',');
     if (validActions.includes(action)) {
-      const content = contentData ? contentData : '';
-      if (typeof content === 'string' && typeof userId === 'number') {
+      if (typeof content === 'object' && typeof userId === 'number') {
         const adminAction = createAdminAction(action, content, userId)
         await submitAdminAction(adminAction)
           .then(async res => {
-            await generateLog('action', `Admin requested to ${action} tweet ${content}`)
+            await generateLog('action', `Admin id ${userId} requested to ${action} with content ${JSON.stringify(content)}`)
             response.statusCode = 200;
             response.body = JSON.stringify({
               message: 'Action saved successfully'
@@ -38,7 +36,7 @@ module.exports.manageTweets = async event => {
       } else {
         response.statusCode = 400;
         response.body = JSON.stringify({
-          message: 'Invalid tweet details!!'
+          message: 'Invalid content details!!'
         });
       }
     } else {
@@ -53,7 +51,7 @@ module.exports.manageTweets = async event => {
   return response;
 };
 
-const submitAdminAction = tweetInfo => {
+const submitAdminAction = async tweetInfo => {
   const tweetDbData = {
     TableName: process.env.ACTIONS_TABLE,
     Item: tweetInfo,
@@ -68,9 +66,10 @@ const createAdminAction = (action, content, userId) => {
     id: uuid.v1(),
     action,
     content,
-    userId,
-    isApproved: 0,
-    isProcessed: 0,
+    createdBy: userId,
+    isApproved: false,
+    isProcessed: false,
+    approvedBy: 0,
     remarks: '',
     createdAt: timestamp,
     updatedAt: timestamp,

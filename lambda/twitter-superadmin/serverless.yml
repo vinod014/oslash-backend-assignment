@@ -20,6 +20,8 @@ provider:
   environment:
     ACTIONS_TABLE: admin_actions
     LOGS_TABLE: logs
+    CALLBACKS_TABLE: action_callbacks
+    TWEETS_TABLE: tweets
 
 functions:
   logs:
@@ -28,4 +30,18 @@ functions:
       - http:
          path: /listLogs/{type}
          method: get
+         cors: true
+  approve:
+    handler: services/approve.approveAction
+    events:
+      - http:
+         path: /approveAction
+         method: post
+         cors: true
+  insight:
+    handler: services/insights.getData
+    events:
+      - http:
+         path: /getInsights
+         method: post
          cors: true

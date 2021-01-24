@@ -1,7 +1,8 @@
 {
-  "action": "changeUserDetails",
+  "action": "updateTweet",
   "content": {
-    "name": "Abc"
+    "twitterUserId": 14,
+    "message": "Admin tweeted for user 14"
   },
   "userId": 123
 }
